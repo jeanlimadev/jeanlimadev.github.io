@@ -10,27 +10,25 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+
 /**********
-  HOME
+  HEADER
 **********/
 
-.home {
-  background: url('../img/home.jpeg');
-  background-size: cover;
-  height: 100vh;
-  color: white;
-}
-
 .header {
-  padding: 20px;
-}
-
-.header .nav ul {
+  position: fixed;
+  width: 100%;
+  height: 50px;
   display: flex;
   justify-content: flex-end;
 }
 
+.header .nav ul {
+  display: flex;
+}
+
 .header .nav ul li {
+  display: flex;
   padding: 10px;
   list-style: none;
 }
@@ -54,16 +52,57 @@ body {
   transform: scaleX(1);
 }
 
-.profile {
-  width: 300px;
-  margin: 50px auto;
-  text-align: center;
-  font-size: 2em;
+/**********
+  HOME
+**********/
+
+.home {
+  background: url('../img/home.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  padding: 50px 0;
+  color: white;
+  box-shadow: 0 0 10px black;
 }
 
-.profile .avatar {
-  width: 70%;
+.home .profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  margin: 70px auto;
+  font-size: 25px;
+}
+
+.home .profile .avatar {
+  width: 250px;
   border-radius: 500px;
-  border: 2px solid white;
-  box-shadow: 0 0 20px white;
+  border: 3px solid white;
+  box-shadow: 0 0 10px white;
+}
+
+
+
+/**********
+  ABOUT
+**********/
+
+.about {
+  height: 100vh;
+  background-color: gray;
+  padding: 50px 0;
+}
+
+
+/**********
+  PORTFOLIO
+**********/
+
+.portfolio {
+  height: 100vh;
+  background-color: rgb(199, 107, 107);
+  padding: 50px 0;
 }
