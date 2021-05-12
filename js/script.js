@@ -2,6 +2,11 @@
 const menuItems = document.querySelectorAll('.nav a[href^="#"]')
 const header = document.querySelector('.header')
 
+window.addEventListener('scroll', function () {
+  if (window.scrollY != 0) header.classList.add('menuColorized'); // > 0 ou outro valor desejado
+  else header.classList.remove('menuColorized');
+})
+
 menuItems.forEach(item => {
   item.addEventListener('click', scrollToIdOnClick)
 })  

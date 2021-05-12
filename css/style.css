@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+:root {
+  --colorPrimary: rgb(168, 165, 0);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -21,6 +25,13 @@ body {
   height: 50px;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  transition: background 500ms ease;
+}
+
+.menuColorized {
+  background: white;
+  box-shadow: 0 0 5px rgb(197, 197, 197);
 }
 
 .header .nav ul {
@@ -35,15 +46,15 @@ body {
 
 .header .nav ul li a {
   text-decoration: none;
-  color: white;
   font-size: 20px;
   padding: 10px;
+  color: var(--colorPrimary);
 }
 
 .header .nav ul li a:after {
   display:block;
   content: '';
-  border-bottom: solid 3px white;
+  border-bottom: solid 3px var(--colorPrimary);
   transform: scaleX(0);  
   transition: transform 300ms ease;
 }
@@ -61,8 +72,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
-  padding: 50px 0;
-  color: white;
+  padding: 70px 0;
+  color: var(--colorPrimary);
   box-shadow: 0 0 10px black;
 }
 
@@ -79,9 +90,10 @@ body {
 
 .home .profile .avatar {
   width: 250px;
+  margin-bottom: 20px;
   border-radius: 500px;
-  border: 3px solid white;
-  box-shadow: 0 0 10px white;
+  border: 3px solid var(--colorPrimary);
+  box-shadow: 0 0 10px var(--colorPrimary);
 }
 
 
@@ -92,8 +104,8 @@ body {
 
 .about {
   height: 100vh;
-  background-color: gray;
-  padding: 50px 0;
+  padding: 70px 0;
+  text-align: center;
 }
 
 
@@ -102,7 +114,40 @@ body {
 **********/
 
 .portfolio {
-  height: 100vh;
-  background-color: rgb(199, 107, 107);
+  text-align: center;
   padding: 50px 0;
+}
+
+.portfolio h1 {
+  margin-bottom: 30px;
+}
+
+.portfolio .projetos {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.portfolio .projetos .projeto {
+  width: 300px;
+  height: 300px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px black;
+}
+
+
+/**********
+  FOOTER
+**********/
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  font-weight: bold;
+  background-color: black;
+  color: white;
 }
