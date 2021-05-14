@@ -1,11 +1,25 @@
 
 const menuItems = document.querySelectorAll('.nav a[href^="#"]')
 const header = document.querySelector('.header')
+const btnTopo = document.querySelector('.btnTopo')
 
+// funções de scroll
 window.addEventListener('scroll', function () {
-  if (window.scrollY != 0) header.classList.add('menuColorized'); // > 0 ou outro valor desejado
-  else header.classList.remove('menuColorized');
+
+  window.scrollY != 0 
+  ? header.classList.add('menuColorized')
+  : header.classList.remove('menuColorized')
+
+  window.scrollY >= 200 
+  ? btnTopo.classList.add('visible')
+  : btnTopo.classList.remove('visible')
+
 })
+
+// função do botão de ir para o topo da página
+btnTopo.onclick = function() {
+  smoothScrollTo(0, 0, 1000)
+}
 
 menuItems.forEach(item => {
   item.addEventListener('click', scrollToIdOnClick)
@@ -21,6 +35,7 @@ function scrollToIdOnClick(e) {
   smoothScrollTo(0, section, 1000)
 }
 
+// função que cria a animação de scroll entre as páginas
  function smoothScrollTo(endX, endY, duration) {
   const startX = window.scrollX || window.pageXOffset
   const startY = window.scrollY || window.pageYOffset

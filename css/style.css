@@ -2,6 +2,7 @@
 
 :root {
   --colorPrimary: rgb(168, 165, 0);
+  --colorTexts: rgb(63, 63, 63);
 }
 
 * {
@@ -72,6 +73,7 @@ body {
   background: url('../img/home.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   height: 100vh;
   padding: 70px 0;
   color: var(--colorPrimary);
@@ -116,9 +118,9 @@ body {
   justify-content: space-between;
   width: 90%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 30px;
   background-color: white;
-  color: rgb(63, 63, 63);
+  color: var(--colorTexts);
   box-shadow: 0 0 5px gray;
 }
 
@@ -146,6 +148,10 @@ body {
     width: 100px;
     height: 100px;
   }
+
+  .about .container .profile .informations {
+    font-size: 12px;
+  }
 }
 
 .about .container .profile .informations {
@@ -170,7 +176,7 @@ body {
 
 .about .container .profile .informations ul li a {
   text-decoration: none;
-  color: rgb(63, 63, 63);
+  color: var(--colorTexts);
   transition: color 500ms ease;
 }
 
@@ -211,6 +217,32 @@ body {
   text-align: center;
   padding: 50px 0;
   min-height: 100vh;
+}
+
+
+/**********
+  BOTÃO TOPO
+**********/
+
+.btnTopo {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 500px;
+  border: none;
+  box-shadow: 0 0 5px black;
+  background-color: var(--colorPrimary);
+  bottom: 40px;
+  right: -100%;
+  transition: all 700ms ease;
+}
+
+.visible {
+  right: 20px;
 }
 
 
