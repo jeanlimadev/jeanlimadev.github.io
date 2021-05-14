@@ -25,12 +25,13 @@ body {
   height: 50px;
   display: flex;
   justify-content: flex-end;
+  padding: 0 20px;
   align-items: center;
   transition: background 500ms ease;
 }
 
 .menuColorized {
-  background: white;
+  background: rgba(255, 255, 255, 0.801);
   box-shadow: 0 0 5px rgb(197, 197, 197);
 }
 
@@ -68,12 +69,13 @@ body {
 **********/
 
 .home {
-  background: url('../img/home.jpeg');
+  background: url('../img/home.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
   padding: 70px 0;
   color: var(--colorPrimary);
+  text-shadow: 0 0 10px black;
   box-shadow: 0 0 10px black;
 }
 
