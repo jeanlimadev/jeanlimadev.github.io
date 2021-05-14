@@ -103,9 +103,101 @@ body {
 **********/
 
 .about {
-  height: 100vh;
+  min-height: 100vh;
   padding: 70px 0;
   text-align: center;
+  background-color: rgb(230, 230, 230);
+}
+
+.about .container {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  color: rgb(63, 63, 63);
+  box-shadow: 0 0 5px gray;
+}
+
+@media (max-width: 900px) {
+  .about .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.about .container .profile {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.about .container .profile .avatar {
+  width: 170px;
+  height: 170px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px gray;
+}
+
+@media (max-width: 450px) {
+  .about .container .profile .avatar {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.about .container .profile .informations {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 15px 15px 0;
+}
+
+.about .container .profile .informations span {
+  padding: 5px 10px;
+}
+
+.about .container .profile .informations ul {
+  list-style: none;
+  text-align: left;
+}
+
+.about .container .profile .informations ul li {
+  padding: 5px 10px;
+}
+
+.about .container .profile .informations ul li a {
+  text-decoration: none;
+  color: rgb(63, 63, 63);
+  transition: color 500ms ease;
+}
+
+.about .container .profile .informations ul li a:hover {
+  color: var(--colorPrimary);
+}
+
+.about .container .profile .informations .socialIcons {
+  width: 15px;
+}
+
+.about .container .aboutMe {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+@media (max-width: 900px) {
+  .about .container .aboutMe {
+    width: 100%;
+  }
+}
+
+.about .container .aboutMe h1 {
+  margin-bottom: 20px;
+}
+
+.about .container .aboutMe p {
+  padding: 10px;
 }
 
 
@@ -116,25 +208,7 @@ body {
 .portfolio {
   text-align: center;
   padding: 50px 0;
-}
-
-.portfolio h1 {
-  margin-bottom: 30px;
-}
-
-.portfolio .projetos {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.portfolio .projetos .projeto {
-  width: 300px;
-  height: 300px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 0 10px black;
+  min-height: 100vh;
 }
 
 
