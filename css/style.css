@@ -302,6 +302,11 @@ footer {
 
 
 @media (max-width: 900px) {
+
+  .header {
+    justify-content: center;
+  }
+
   .about .container {
     flex-wrap: wrap;
     justify-content: center;
