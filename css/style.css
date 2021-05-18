@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
-  --colorPrimary: rgb(168, 165, 0);
+  --colorPrimary: rgb(0, 125, 197);
   --colorTexts: rgb(63, 63, 63);
 }
 
@@ -32,7 +32,7 @@ body {
 }
 
 .menuColorized {
-  background: rgba(255, 255, 255, 0.801);
+  background: rgba(255, 255, 255, 0.900);
   box-shadow: 0 0 5px rgb(197, 197, 197);
 }
 
@@ -50,7 +50,7 @@ body {
   text-decoration: none;
   font-size: 20px;
   padding: 10px;
-  color: var(--colorPrimary);
+  color: white;
 }
 
 .header .nav ul li a:after {
@@ -76,7 +76,7 @@ body {
   background-attachment: fixed;
   height: 100vh;
   padding: 70px 0;
-  color: var(--colorPrimary);
+  color: white;
   text-shadow: 0 0 10px black;
   box-shadow: 0 0 10px black;
 }
@@ -96,8 +96,8 @@ body {
   width: 250px;
   margin-bottom: 20px;
   border-radius: 500px;
-  border: 3px solid var(--colorPrimary);
-  box-shadow: 0 0 10px var(--colorPrimary);
+  border: 3px solid white;
+  box-shadow: 0 0 10px white;
 }
 
 
@@ -115,7 +115,7 @@ body {
 
 .about .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 90%;
   margin: 0 auto;
   padding: 30px;
@@ -124,68 +124,73 @@ body {
   box-shadow: 0 0 5px gray;
 }
 
-@media (max-width: 900px) {
-  .about .container {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
+
 
 .about .container .profile {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   margin-bottom: 20px;
 }
 
 .about .container .profile .avatar {
-  width: 170px;
-  height: 170px;
+  width: 250px;
+  height: 250px;
   border-radius: 5px;
   box-shadow: 0 0 5px gray;
+  margin-bottom: 15px;
 }
 
-@media (max-width: 450px) {
-  .about .container .profile .avatar {
-    width: 100px;
-    height: 100px;
-  }
-
-  .about .container .profile .informations {
-    font-size: 12px;
-  }
-}
-
-.about .container .profile .informations {
+.about .container .profile .contact {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 0 15px 15px 0;
+  justify-content: center;
+  align-items: center;
 }
 
-.about .container .profile .informations span {
-  padding: 5px 10px;
-}
-
-.about .container .profile .informations ul {
+.about .container .profile .contact ul {
+  display: flex;
   list-style: none;
   text-align: left;
 }
 
-.about .container .profile .informations ul li {
+.about .container .profile .contact ul li {
   padding: 5px 10px;
 }
 
-.about .container .profile .informations ul li a {
+.about .container .profile .contact ul li a {
   text-decoration: none;
   color: var(--colorTexts);
   transition: color 500ms ease;
 }
 
-.about .container .profile .informations ul li a:hover {
+.about .container .profile .contact ul li a:hover {
   color: var(--colorPrimary);
 }
 
-.about .container .profile .informations .socialIcons {
-  width: 15px;
+.about .container .profile .socialIcons {
+  width: 25px;
+  height: 25px;
+}
+
+.about .container .profile .Skills {
+  width: 200px;
+}
+
+.about .container .profile .Skills h2 {
+  margin: 30px 0 10px 0;
+  color: var(--colorPrimary);
+}
+
+.about .container .profile .Skills .imgSkills {
+  width: 50px;
+  height: 50px;
+  padding: 3px;
+  transition: all 500ms ease;
+}
+
+.about .container .profile .Skills .imgSkills:hover {
+  transform: scale(1.1, 1.1);
 }
 
 .about .container .aboutMe {
@@ -194,14 +199,12 @@ body {
   width: 60%;
 }
 
-@media (max-width: 900px) {
-  .about .container .aboutMe {
-    width: 100%;
-  }
+.about .container .aboutMe hr {
+  visibility: hidden;
 }
 
 .about .container .aboutMe h1 {
-  margin-bottom: 20px;
+  color: var(--colorPrimary);
 }
 
 .about .container .aboutMe p {
@@ -215,8 +218,32 @@ body {
 
 .portfolio {
   text-align: center;
-  padding: 50px 0;
+  padding: 70px 0;
   min-height: 100vh;
+}
+
+.portfolio h1 {
+  color: var(--colorPrimary);
+}
+
+.portfolio .projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.portfolio .projects .project {
+  width: 250px;
+  height: 200px;
+  margin: 15px;
+  background-color: gray;
+  box-shadow: 0 0 10px var(--colorTexts);
+  transition: all 500ms ease;
+}
+
+.portfolio .projects .project:hover {
+  transform: scale(1.05, 1.05);
 }
 
 
@@ -229,7 +256,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 25px;
+  font-weight: bold;
   width: 40px;
   height: 40px;
   border-radius: 500px;
@@ -239,6 +267,13 @@ body {
   bottom: 40px;
   right: -100%;
   transition: all 700ms ease;
+}
+
+.btnTopo:hover {
+  transform: scale(1.1, 1.1);
+  background-color: var(--colorTexts);
+  color: white;
+  cursor: pointer;
 }
 
 .visible {
@@ -258,4 +293,39 @@ footer {
   font-weight: bold;
   background-color: black;
   color: white;
+}
+
+
+/**********
+  @MEDIA
+**********/
+
+
+@media (max-width: 900px) {
+  .about .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .about .container .aboutMe {
+    width: 100%;
+  }
+
+  .about .container .aboutMe hr {
+    visibility: visible;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 520px) {
+  .about .container .profile {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 450px) {
+  .about .container .profile .avatar {
+    width: 200px;
+    height: 200px;
+  }
 }

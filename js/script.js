@@ -1,14 +1,22 @@
 
 const menuItems = document.querySelectorAll('.nav a[href^="#"]')
 const header = document.querySelector('.header')
+const textHeader = document.querySelectorAll('.header .nav ul li a')
 const btnTopo = document.querySelector('.btnTopo')
+const subtitulo = document.querySelector('.subtitulo')
+
+
 
 // funções de scroll
 window.addEventListener('scroll', function () {
 
-  window.scrollY != 0 
-  ? header.classList.add('menuColorized')
-  : header.classList.remove('menuColorized')
+  if (window.scrollY != 0) {
+    header.classList.add('menuColorized')
+    textHeader.forEach(item => item.style.color = 'var(--colorPrimary)')
+  } else {
+    header.classList.remove('menuColorized')
+    textHeader.forEach(item => item.style.color = '')
+  }
 
   window.scrollY >= 200 
   ? btnTopo.classList.add('visible')
