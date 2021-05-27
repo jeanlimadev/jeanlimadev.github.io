@@ -3,9 +3,24 @@ const menuItems = document.querySelectorAll('.nav a[href^="#"]')
 const header = document.querySelector('.header')
 const textHeader = document.querySelectorAll('.header .nav ul li a')
 const btnTopo = document.querySelector('.btnTopo')
-const subtitulo = document.querySelector('.subtitulo')
+const writer = document.querySelector('.phrase')
 
+function typeWriter() {
+  const phrase = 'Web Developer'
+  const phraseArray = phrase.split('')
+  
+  phraseArray.forEach((letra, i) => {
+    setTimeout(() => {
+      writer.innerHTML += letra
+    }, 100 * i)
+  })
 
+  writer.innerHTML = ''
+}
+
+setInterval(() => {
+  typeWriter()
+}, 3000)
 
 // funções de scroll
 window.addEventListener('scroll', function () {

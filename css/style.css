@@ -65,6 +65,7 @@ body {
   transform: scaleX(1);
 }
 
+
 /**********
   HOME
 **********/
@@ -98,6 +99,22 @@ body {
   border-radius: 500px;
   border: 3px solid white;
   box-shadow: 0 0 10px white;
+}
+
+.phrase::after {
+  content: '|';
+  opacity: 1;
+  animation: blink 700ms infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
 
 
@@ -234,17 +251,30 @@ body {
 }
 
 .portfolio .projects .project {
-  width: 250px;
-  height: 200px;
+  width: 400px;
+  height: 400px;
   margin: 15px;
-  background-color: gray;
-  box-shadow: 0 0 10px var(--colorTexts);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px var(--colorTexts);
   transition: all 500ms ease;
 }
 
-.portfolio .projects .project:hover {
+.portfolio .projects .project h1 {
+  margin-bottom: 10px;
+}
+
+
+.portfolio .projects .project .imgPreview {
+  width: 80%;
+  transition: all 700ms ease-in-out;
+}
+
+.portfolio .projects .project .imgPreview:hover {
   transform: scale(1.05, 1.05);
 }
+
+
 
 
 /**********
