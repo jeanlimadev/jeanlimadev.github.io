@@ -5,6 +5,8 @@ const textHeader = document.querySelectorAll('.header .nav ul li a')
 const btnTopo = document.querySelector('.btnTopo')
 const writer = document.querySelector('.phrase')
 
+
+// função efeito maquina de escrever
 function typeWriter() {
   const phrase = 'Web Developer'
   const phraseArray = phrase.split('')
