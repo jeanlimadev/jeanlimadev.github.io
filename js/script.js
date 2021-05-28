@@ -54,7 +54,24 @@ baseboard(texts)
 
 
 // funções de scroll
-window.addEventListener('scroll', function () {
+window.addEventListener('scroll', () => {
+  const sections = []
+  menuItems.forEach(item => {
+    sections.push({ 
+      id: item.hash, 
+      scrollLocation: document.querySelector(item.hash).offsetTop
+    })
+  })
+  
+  const menuItemsArray = [...menuItems]
+  
+  sections.forEach(item => {
+    if (window.scrollY >= item.scrollLocation -100) {
+      menuItemsArray.forEach(item => item.className = '')
+      newMenuItemsArray = menuItemsArray.filter(i => i.hash == item.id)
+      newMenuItemsArray[0].classList.add('selected')
+    }
+  })
 
   if (window.scrollY != 0) {
     header.classList.add('menuColorized')
@@ -65,8 +82,8 @@ window.addEventListener('scroll', function () {
   }
 
   window.scrollY >= 600 
-  ? btnTopo.classList.add('visible')
-  : btnTopo.classList.remove('visible')
+    ? btnTopo.classList.add('visible')
+    : btnTopo.classList.remove('visible')
 
 })
 

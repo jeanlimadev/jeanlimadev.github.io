@@ -27,11 +27,11 @@ body {
   justify-content: flex-end;
   padding: 0 20px;
   align-items: center;
-  transition: background 1800ms ease;
+  transition: background 1500ms ease;
 }
 
 .menuColorized {
-  background: rgba(255, 255, 255, 0.900);
+  background: rgba(255, 255, 255, 0.950);
   box-shadow: 0 0 5px rgb(197, 197, 197);
 }
 
@@ -62,6 +62,14 @@ body {
 
 .header .nav ul li a:hover:after {
   transform: scaleX(1);
+}
+
+.header .nav ul li .selected:after {
+  display:block;
+  content: '';
+  border-bottom: solid 3px var(--colorPrimary);
+  transform: scaleX(1);  
+  transition: transform 300ms ease;
 }
 
 
