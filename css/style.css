@@ -15,7 +15,6 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-
 /**********
   HEADER
 **********/
@@ -28,7 +27,7 @@ body {
   justify-content: flex-end;
   padding: 0 20px;
   align-items: center;
-  transition: background 500ms ease;
+  transition: background 1800ms ease;
 }
 
 .menuColorized {
@@ -87,7 +86,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 300px;
+  width: 450px;
   height: 300px;
   margin: 70px auto;
   font-size: 25px;
@@ -118,7 +117,6 @@ body {
 }
 
 
-
 /**********
   ABOUT
 **********/
@@ -140,8 +138,6 @@ body {
   color: var(--colorTexts);
   box-shadow: 0 0 5px gray;
 }
-
-
 
 .about .container .profile {
   display: flex;
@@ -275,8 +271,6 @@ body {
 }
 
 
-
-
 /**********
   BOTÃO TOPO
 **********/
@@ -294,7 +288,7 @@ body {
   border: none;
   box-shadow: 0 0 5px black;
   background-color: var(--colorPrimary);
-  bottom: 40px;
+  bottom: 60px;
   right: -100%;
   transition: all 700ms ease;
 }
@@ -332,9 +326,8 @@ footer {
 
 
 @media (max-width: 900px) {
-
-  .header {
-    justify-content: center;
+  .home .profile .avatar {
+    width: 220px;
   }
 
   .about .container {
@@ -353,6 +346,18 @@ footer {
 }
 
 @media (max-width: 520px) {
+  .header {
+    justify-content: center;
+  }
+
+  .home .profile {
+    font-size: 20px;
+  }
+
+  .home .profile .avatar {
+    width: 200px;
+  }
+
   .about .container .profile {
     font-size: 13px;
   }

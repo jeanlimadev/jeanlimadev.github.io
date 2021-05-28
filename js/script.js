@@ -7,22 +7,51 @@ const writer = document.querySelector('.phrase')
 
 
 // função efeito maquina de escrever
-function typeWriter() {
-  const phrase = 'Web Developer'
-  const phraseArray = phrase.split('')
-  
-  phraseArray.forEach((letra, i) => {
-    setTimeout(() => {
-      writer.innerHTML += letra
-    }, 100 * i)
-  })
+const texts = ['Web Developer', 'Apaixonado por Programação!']
 
-  writer.innerHTML = ''
+function write(texts, done) {
+  const char = texts.split('').reverse()
+  const typer = setInterval(() => {
+    if (!char.length) {
+      clearInterval(typer)
+      return setTimeout(done, 1500) // espera um pouco antes de apagar
+    }
+    const next = char.pop()
+    writer.innerHTML += next
+  }, 120)
 }
 
-setInterval(() => {
-  typeWriter()
-}, 3000)
+function clear(done) {
+  const char = writer.innerHTML
+  let nr = char.length
+  const typer = setInterval(() => {
+    if (nr-- == 0) {
+      clearInterval(typer)
+      return done()
+    }
+    writer.innerHTML = char.slice(0, nr)
+  }, 70)
+}
+
+function baseboard(contents) {
+  let atual = -1
+
+  function next(cb) {
+    atual < contents.length - 1 
+      ? atual++
+      : atual = 0
+
+    let texts = contents[atual]
+    write(texts, () => {
+      clear(next)
+    })
+  }
+  next(next)
+}
+
+baseboard(texts)
+
+
 
 // funções de scroll
 window.addEventListener('scroll', function () {
@@ -35,7 +64,7 @@ window.addEventListener('scroll', function () {
     textHeader.forEach(item => item.style.color = '')
   }
 
-  window.scrollY >= 200 
+  window.scrollY >= 600 
   ? btnTopo.classList.add('visible')
   : btnTopo.classList.remove('visible')
 
