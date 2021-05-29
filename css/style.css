@@ -23,9 +23,10 @@ body {
   position: fixed;
   width: 100%;
   height: 50px;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: flex-end;
-  padding: 0 20px;
   align-items: center;
   transition: background 1500ms ease;
 }
@@ -33,6 +34,11 @@ body {
 .menuColorized {
   background: rgba(255, 255, 255, 0.950);
   box-shadow: 0 0 5px rgb(197, 197, 197);
+}
+
+.header .nav {
+  display: flex;
+  align-items: center;
 }
 
 .header .nav ul {
@@ -354,12 +360,18 @@ footer {
 }
 
 @media (max-width: 520px) {
+
   .header {
     justify-content: center;
   }
 
+  .btnMenuLateral {
+    display: block;
+  }
+
   .home .profile {
-    font-size: 20px;
+    font-size: 18px;
+    width: 100%;
   }
 
   .home .profile .avatar {

@@ -4,6 +4,7 @@ const header = document.querySelector('.header')
 const textHeader = document.querySelectorAll('.header .nav ul li a')
 const btnTopo = document.querySelector('.btnTopo')
 const writer = document.querySelector('.phrase')
+const btnMenuLateral = document.querySelector('.btnMenuLateral')
 
 
 // função efeito maquina de escrever
@@ -59,7 +60,7 @@ window.addEventListener('scroll', () => {
   menuItems.forEach(item => {
     sections.push({ 
       id: item.hash, 
-      scrollLocation: document.querySelector(item.hash).offsetTop
+      scrollLocation: document.querySelector(item.hash).offsetTop+1
     })
   })
   
@@ -70,7 +71,7 @@ window.addEventListener('scroll', () => {
       menuItemsArray.forEach(item => item.className = '')
       newMenuItemsArray = menuItemsArray.filter(i => i.hash == item.id)
       newMenuItemsArray[0].classList.add('selected')
-    }
+    } 
   })
 
   if (window.scrollY != 0) {
@@ -94,7 +95,7 @@ btnTopo.onclick = function() {
 
 menuItems.forEach(item => {
   item.addEventListener('click', scrollToIdOnClick)
-})  
+})
 
 function scrollToIdOnClick(e) {
   e.preventDefault()
