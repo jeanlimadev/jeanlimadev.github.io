@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
-  --colorPrimary: rgb(0, 125, 197);
-  --colorTexts: rgb(63, 63, 63);
+  --colorPrimary: rgb(230, 1, 1);
+  --colorSecondary: rgb(161, 1, 1);
+  --colorTexts: rgb(44, 44, 44);
 }
 
 * {
@@ -31,9 +32,24 @@ body {
   transition: background 1500ms ease;
 }
 
+@keyframes teste {
+  0% {
+    height: 0px;
+  }
+
+  50% {
+    height: 60px;
+  }
+
+  100% {
+    height: 50px;
+  }
+}
+
 .menuColorized {
-  background: rgba(255, 255, 255, 0.950);
+  background: white;
   box-shadow: 0 0 5px rgb(197, 197, 197);
+  animation: teste 1000ms ease-in-out;
 }
 
 .header .nav {
@@ -309,7 +325,7 @@ body {
 
 .btnTopo:hover {
   transform: scale(1.1, 1.1);
-  background-color: var(--colorTexts);
+  background-color: var(--colorSecondary);
   color: white;
   cursor: pointer;
 }
@@ -329,7 +345,7 @@ footer {
   justify-content: center;
   height: 50px;
   font-weight: bold;
-  background-color: black;
+  background-color: var(--colorTexts);
   color: white;
 }
 

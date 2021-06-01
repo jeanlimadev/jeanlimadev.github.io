@@ -76,7 +76,7 @@ window.addEventListener('scroll', () => {
 
   if (window.scrollY != 0) {
     header.classList.add('menuColorized')
-    textHeader.forEach(item => item.style.color = 'var(--colorPrimary)')
+    textHeader.forEach(item => item.style.color = 'var(--colorTexts)')
   } else {
     header.classList.remove('menuColorized')
     textHeader.forEach(item => item.style.color = '')
