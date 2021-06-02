@@ -281,7 +281,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: 400px;
   height: 450px;
   margin: 15px;
@@ -336,6 +336,21 @@ body {
   font-weight: bold;
   margin-right: 3px;
   color: var(--colorSecondary);
+}
+
+.portfolio .projects .project .repository {
+  display: flex;
+}
+
+.portfolio .projects .project .repository a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  font-size: 10px;
+  text-decoration: none;
+  color: var(--colorTexts);
 }
 
 .portfolio .projects .project .repository img {
