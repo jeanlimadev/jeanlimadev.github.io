@@ -1,4 +1,4 @@
-
+// fazendo a captura de elementos
 const menuItems = document.querySelectorAll('.nav a[href^="#"]')
 const header = document.querySelector('.header')
 const textHeader = document.querySelectorAll('.header .nav ul li a')
@@ -19,7 +19,7 @@ function write(texts, done) {
     }
     const next = char.pop()
     writer.innerHTML += next
-  }, 120)
+  }, 100)
 }
 
 function clear(done) {
@@ -31,7 +31,7 @@ function clear(done) {
       return done()
     }
     writer.innerHTML = char.slice(0, nr)
-  }, 70)
+  }, 50)
 }
 
 function baseboard(contents) {
@@ -53,10 +53,13 @@ function baseboard(contents) {
 baseboard(texts)
 
 
-
 // funções de scroll
 window.addEventListener('scroll', () => {
+
+  // array onde são armazedaos os ids e localização na tela de cada section
   const sections = []
+
+  // adiciona as informações o array acima
   menuItems.forEach(item => {
     sections.push({ 
       id: item.hash, 
@@ -66,6 +69,7 @@ window.addEventListener('scroll', () => {
   
   const menuItemsArray = [...menuItems]
   
+  // adiciona seleção no header na section atual
   sections.forEach(item => {
     if (window.scrollY >= item.scrollLocation -100) {
       menuItemsArray.forEach(item => item.className = '')
@@ -74,6 +78,7 @@ window.addEventListener('scroll', () => {
     } 
   })
 
+  // adicona efeitos e cores no header ao dar scroll
   if (window.scrollY != 0) {
     header.classList.add('menuColorized')
     textHeader.forEach(item => item.style.color = 'var(--colorTexts)')
@@ -82,21 +87,20 @@ window.addEventListener('scroll', () => {
     textHeader.forEach(item => item.style.color = '')
   }
 
-  window.scrollY >= 600 
+  // insere o botão retornar ao topo na página
+  window.scrollY >= 400 
     ? btnTopo.classList.add('visible')
     : btnTopo.classList.remove('visible')
 
 })
 
-// função do botão de ir para o topo da página
+
+// função do botão ir para o topo da página
 btnTopo.onclick = function() {
   smoothScrollTo(0, 0, 1000)
 }
 
-menuItems.forEach(item => {
-  item.addEventListener('click', scrollToIdOnClick)
-})
-
+// função que leve o usuário até a section selecionada no header
 function scrollToIdOnClick(e) {
   e.preventDefault()
 
@@ -107,7 +111,12 @@ function scrollToIdOnClick(e) {
   smoothScrollTo(0, section, 1000)
 }
 
-// função que cria a animação de scroll entre as páginas
+menuItems.forEach(item => {
+  item.addEventListener('click', scrollToIdOnClick)
+})
+
+
+// função que cria a animação de scroll entre as páginas (encontrei pronta)
  function smoothScrollTo(endX, endY, duration) {
   const startX = window.scrollX || window.pageXOffset
   const startY = window.scrollY || window.pageYOffset

@@ -217,6 +217,9 @@ body {
 }
 
 .about .container .profile .Skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 200px;
 }
 
@@ -225,9 +228,20 @@ body {
   color: var(--colorPrimary);
 }
 
+.about .container .profile .Skills hr {
+  width: 100%;
+}
+
+.about .container .profile .Skills .images {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 150px;
+}
+
 .about .container .profile .Skills .imgSkills {
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   padding: 3px;
   transition: all 500ms ease;
 }
@@ -263,6 +277,8 @@ body {
   text-align: center;
   padding: 70px 0 0 0;
   min-height: 100vh;
+  background: rgb(44,44,44);
+  background: linear-gradient(180deg, rgba(44,44,44,1) 0%, rgba(198,198,198,1) 100%);
 }
 
 .portfolio h1 {
@@ -283,7 +299,7 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 400px;
-  height: 450px;
+  min-height: 450px;
   margin: 15px;
   padding: 20px;
   border-radius: 10px;
@@ -326,18 +342,6 @@ body {
   align-items: center;
 }
 
-.portfolio .projects .project .languages {
-  display: flex;
-  font-size: 11px;
-  padding: 10px;
-}
-
-.portfolio .projects .project .languages label {
-  font-weight: bold;
-  margin-right: 3px;
-  color: var(--colorSecondary);
-}
-
 .portfolio .projects .project .repository {
   display: flex;
 }
@@ -362,6 +366,27 @@ body {
   transform: scale(1.05, 1.05);
 }
 
+.portfolio .projects .project .informations {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 11px;
+  padding: 10px;
+}
+
+.portfolio .projects .project .informations label {
+  font-weight: bold;
+  margin-right: 3px;
+  color: var(--colorSecondary);
+}
+
+.portfolio .projects .project .informations .languages {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 5px;
+}
+
 
 /**********
   BOTÃO TOPO
@@ -379,16 +404,15 @@ body {
   border-radius: 500px;
   border: none;
   box-shadow: 0 0 5px black;
-  background-color: var(--colorPrimary);
+  background-color: black;
+  color: white;
   bottom: 60px;
   right: -100%;
   transition: all 700ms ease;
 }
 
 .btnTopo:hover {
-  transform: scale(1.1, 1.1);
-  background-color: var(--colorSecondary);
-  color: white;
+  transform: scale(1.05, 1.05);
   cursor: pointer;
 }
 
@@ -476,7 +500,7 @@ body {
     font-size: 12px;
   }
   
-  .portfolio .projects .project .languages {
+  .portfolio .projects .project .informations {
     font-size: 8px;
   }
 }
