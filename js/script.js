@@ -8,7 +8,7 @@ const btnMenuLateral = document.querySelector('.btnMenuLateral')
 
 
 // função efeito maquina de escrever
-const texts = ['Web Developer', 'Apaixonado por Programação!']
+const texts = ['Front-end Developer', 'Apaixonado por programação!']
 
 function write(texts, done) {
   const char = texts.split('').reverse()
